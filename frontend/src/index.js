@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import store from "./redux/store";
 
 import "./bootstrap.min.css";
@@ -9,9 +10,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
+  
   <Provider store={store}>
+  <GoogleOAuthProvider clientId="312783329233-rk6adcgv04pjd55gcuvhjh4jsu8s3kv1.apps.googleusercontent.com">
     <App />
+    </GoogleOAuthProvider>,
   </Provider>,
+  
   document.getElementById("root")
 );
 

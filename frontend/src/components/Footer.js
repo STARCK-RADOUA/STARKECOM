@@ -8,7 +8,7 @@ const Footer = () => {
         <Row>
           <Col>
             <p className="text-center py-3" style={{ opacity: 0.8 }}>
-              Copyright &copy; 2021 by Shubham Dutta
+              Copyright &copy; 2024 by STARK
             </p>
           </Col>
         </Row>

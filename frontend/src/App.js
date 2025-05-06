@@ -58,12 +58,7 @@ function App() {
           <Route
             path="/search"
             render={({ location, history }) => (
-              <Home
-                location={location}
-                API={API}
-                isMobile={isMobile}
-                history={history}
-              />
+              <Home location={location} API={API} isMobile={isMobile} history={history} />
             )}
           />
           <Route
@@ -73,26 +68,17 @@ function App() {
             )}
             exact
           />
-          <div className={!isMobile ? "mx-5 px-4 py-4" : "mx-3 px-3 py-4"}>
+          <div className={!isMobile ? 'mx-5 px-4 py-4' : 'mx-3 px-3 py-4'}>
             <Route
               path="/placeorder"
               render={({ history }) => (
-                <PlaceOrderScreen
-                  history={history}
-                  API={API}
-                  isMobile={isMobile}
-                />
+                <PlaceOrderScreen history={history} API={API} isMobile={isMobile} />
               )}
             />
             <Route
               path="/orders/:id"
               render={({ history, match }) => (
-                <OrderScreen
-                  match={match}
-                  history={history}
-                  API={API}
-                  isMobile={isMobile}
-                />
+                <OrderScreen match={match} history={history} API={API} isMobile={isMobile} />
               )}
             />
             <Route path="/shipping" component={ShippingScreen} />
@@ -100,13 +86,19 @@ function App() {
             <Route
               path="/login"
               render={({ location, history }) => (
-                <LoginScreen location={location} history={history} API={API} />
+                <LoginScreen
+                  isMobile={isMobile}
+                  location={location}
+                  history={history}
+                  API={API}
+                />
               )}
             />
             <Route
               path="/register"
               render={({ location, history }) => (
                 <RegisterScreen
+                  isMobile={isMobile}
                   location={location}
                   history={history}
                   API={API}
@@ -115,19 +107,12 @@ function App() {
             />
             <Route
               path="/profile"
-              render={({ history }) => (
-                <ProfileScreen history={history} API={API} />
-              )}
+              render={({ history }) => <ProfileScreen history={history} API={API} />}
             />
             <Route
               path="/products/:category/:id"
               render={({ history, match }) => (
-                <ProductScreen
-                  history={history}
-                  API={API}
-                  match={match}
-                  isMobile={isMobile}
-                />
+                <ProductScreen history={history} API={API} match={match} isMobile={isMobile} />
               )}
             />
             <Route
@@ -145,9 +130,7 @@ function App() {
 
             <Route
               path="/admin/userlist"
-              component={({ history }) => (
-                <UserListScreen history={history} API={API} />
-              )}
+              component={({ history }) => <UserListScreen history={history} API={API} />}
             />
             <Route
               path="/admin/user/:id/edit"
@@ -158,9 +141,7 @@ function App() {
 
             <Route
               path="/admin/productlist"
-              component={({ history }) => (
-                <ProductListScreen history={history} API={API} />
-              )}
+              component={({ history }) => <ProductListScreen history={history} API={API} />}
             />
 
             <Route
@@ -172,9 +153,7 @@ function App() {
 
             <Route
               path="/admin/orderlist"
-              component={({ history }) => (
-                <OrderListScreen history={history} API={API} />
-              )}
+              component={({ history }) => <OrderListScreen history={history} API={API} />}
             />
           </div>
         </main>

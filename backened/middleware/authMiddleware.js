@@ -13,6 +13,7 @@ const authProtect = async (req, res, next) => {
       token = req.headers.authorization.split(" ")[1];
       const decoded = jwt.verify(token, process.env.JWT_ACCESS_TOKEN_KEY);
       console.log(decoded);
+      console.log(process.env.JWT_ACCESS_TOKEN_KEY);
 
       // store UserModel (- password) to req.user
       req.user = await UserModel.findById(decoded.id).select("-password");

@@ -7,9 +7,10 @@ dotenv.config();
 console.log(process.env.MONGO_URI);
 const dbConnect = async () => {
   console.log('mongodb://localhost:27017/stark');
+  console.log(process.env.JWT_ACCESS_TOKEN_KEY);
 
   try {
-    const connect = await mongoose.connect('mongodb://localhost:27017/stark', {
+    const connect = await mongoose.connect(process.env.MONGO_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,

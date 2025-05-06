@@ -94,7 +94,7 @@ export default function Header({ isMobile }) {
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             <Link className={classes.link_brand} to="/">
-              eShop
+              StarkShop
             </Link>
           </Typography>
           {/*// Search Box Component */}
